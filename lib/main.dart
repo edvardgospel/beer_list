@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   initBeers() async {
-    List<BeerResponse> beers = await fetchBeers();
+    List<Beer> beers = await fetchBeers();
     context.beerContext(listen: false).setBeers(beers);
   }
 

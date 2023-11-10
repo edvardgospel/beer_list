@@ -1,4 +1,4 @@
-class BeerResponse {
+class Beer {
   final int id;
   final String name;
   final String tagline;
@@ -8,7 +8,7 @@ class BeerResponse {
   final String imageUrl;
   final String brewersTips;
 
-  BeerResponse({
+  Beer({
     required this.id,
     required this.name,
     required this.tagline,
@@ -19,8 +19,8 @@ class BeerResponse {
     required this.brewersTips,
   });
 
-  factory BeerResponse.fromJson(Map<String, dynamic> json) {
-    return BeerResponse(
+  factory Beer.fromJson(Map<String, dynamic> json) {
+    return Beer(
       id: json['id'] as int,
       name: json['name'] as String,
       tagline: json['tagline'] as String,

@@ -1,8 +1,6 @@
 import 'package:beer_list/context/beer_context.dart';
 import 'package:beer_list/server/model/beer_response.dart';
-import 'package:beer_list/services/navigator.dart';
 import 'package:beer_list/themes.dart';
-import 'package:beer_list/view/pages/beer_detail_page.dart';
 import 'package:beer_list/view/widgets/beer_card.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +9,7 @@ class BeerListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<BeerResponse> beerResponse = context.beerContext().likedBeers;
+    List<Beer> beerResponse = context.beerContext().likedBeers;
 
     return Scaffold(
       appBar: AppBar(

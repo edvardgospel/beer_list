@@ -4,7 +4,7 @@ import 'package:beer_list/view/pages/beer_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class BeerCard extends StatelessWidget {
-  final BeerResponse beer;
+  final Beer beer;
 
   const BeerCard({
     Key? key,

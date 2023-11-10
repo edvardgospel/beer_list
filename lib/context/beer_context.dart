@@ -5,15 +5,15 @@ import 'package:provider/provider.dart';
 
 class BeerContext with ChangeNotifier {
   int currentBeerIndex = 0;
-  List<BeerResponse> beers = [];
-  List<BeerResponse> likedBeers = [];
+  List<Beer> beers = [];
+  List<Beer> likedBeers = [];
 
   void setCurrentBeerIndex(int value) {
     currentBeerIndex = value;
     notifyListeners();
   }
 
-  void setBeers(List<BeerResponse> value) {
+  void setBeers(List<Beer> value) {
     beers = List.from(value)..shuffle(Random());
     notifyListeners();
   }
@@ -23,7 +23,7 @@ class BeerContext with ChangeNotifier {
     notifyListeners();
   }
 
-  void addToLikedBeers(BeerResponse value) {
+  void addToLikedBeers(Beer value) {
     likedBeers.add(value);
     notifyListeners();
   }

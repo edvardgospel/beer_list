@@ -3,7 +3,7 @@ import 'package:beer_list/themes.dart';
 import 'package:flutter/material.dart';
 
 class BeerDetailPage extends StatelessWidget {
-  final BeerResponse beer;
+  final Beer beer;
   const BeerDetailPage(this.beer, {Key? key}) : super(key: key);
 
   @override

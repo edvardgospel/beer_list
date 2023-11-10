@@ -11,7 +11,7 @@ class BeerSelectorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<BeerResponse> beers = context.beerContext().beers;
+    List<Beer> beers = context.beerContext().beers;
     int currentBeerIndex = context.beerContext().currentBeerIndex;
 
     return Scaffold(
