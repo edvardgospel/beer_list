@@ -51,7 +51,7 @@ class BeerSelectorPage extends StatelessWidget {
                           context.beerContext(listen: false).setCurrentBeerIndex(currentBeerIndex + 1);
                           if (currentBeerIndex == 9) {
                             navTo(const BeerListPage(), context, onPop: () {
-                              context.beerContext(listen: false).setCurrentBeerIndex(0);
+                              context.beerContext(listen: false).clearSettings();
                             });
                           }
                         },
@@ -67,7 +67,7 @@ class BeerSelectorPage extends StatelessWidget {
                           context.beerContext(listen: false).setCurrentBeerIndex(currentBeerIndex + 1);
                           if (currentBeerIndex == 9) {
                             navTo(const BeerListPage(), context, onPop: () {
-                              context.beerContext(listen: false).setCurrentBeerIndex(0);
+                              context.beerContext(listen: false).clearSettings();
                             });
                           }
                         },

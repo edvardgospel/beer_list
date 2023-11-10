@@ -54,11 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
     _checkInternetConnectivity();
   }
 
-  Future<void> _checkInternetConnectivity({bool reload = false}) async {
+  Future<void> _checkInternetConnectivity() async {
     ConnectivityResult result;
     try {
       result = await _connectivity.checkConnectivity();
-      if (result != ConnectivityResult.none && reload) {
+      if (result != ConnectivityResult.none) {
         initBeers();
       }
     } catch (e) {
@@ -74,13 +74,12 @@ class _MyHomePageState extends State<MyHomePage> {
   initBeers() async {
     List<BeerResponse> beers = await fetchBeers();
     context.beerContext(listen: false).setBeers(beers);
-    print(beers.length);
   }
 
   @override
   Widget build(BuildContext context) {
     return _connectivityStatus == ConnectivityResult.none
-        ? ConnectionErrorPage(onTap: () => _checkInternetConnectivity(reload: true))
+        ? ConnectionErrorPage(onTap: () => _checkInternetConnectivity())
         : const BeerSelectorPage();
   }
 }

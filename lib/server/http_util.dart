@@ -1,22 +1,19 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/retry.dart';
 
-dynamic getRequest(
-  String path,
-  Map<String, String> params,
-) async {
+dynamic getRequest(String path) async {
   var retryClient = RetryClient(Client());
   try {
     var url = Uri.https('api.punkapi.com', path);
-    Map<String, String> headers = {};
 
-    var response = await retryClient.get(url, headers: headers);
+    var response = await retryClient.get(url);
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     }
   } catch (e) {
-    print('---error:${e.toString()}');
+    debugPrint('Error while fetching data: $e');
   }
   return null;
 }

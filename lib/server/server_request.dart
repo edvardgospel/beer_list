@@ -1,13 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:beer_list/server/http_util.dart';
 import 'package:beer_list/server/model/beer_response.dart';
 
 Future<List<BeerResponse>> fetchBeers() async {
-  var jsonResp = await getRequest(
-    '/v2/beers',
-    {},
-  );
+  var jsonResp = await getRequest('/v2/beers');
   return parseBeers(jsonResp);
 }
 
